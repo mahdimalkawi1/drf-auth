@@ -1,7 +1,7 @@
 # Authentication & Production Server
 
 ## Django REST Framework & Docker
-### Author: Ibrahim adnan - Mahdi Malkawi
+### Author: Mahdi Malkawi - Ibrahim adnan
 #### How to initialize/run your application (where applicable)
 to run the app:
 - docker-compose up 
