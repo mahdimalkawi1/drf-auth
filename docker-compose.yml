@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    command: gunicorn snacks_project.wsgi:application --bind 0.0.0.0:8000 --workers 4
+    networks:
+      - my_custom_network
+    ports:
+      - "8000:8000"
+    volumes:
+      - my-data:/data
+
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    networks:
+      - my_custom_network
+
+volumes:
+  my-data:
+
+networks:
+  my_custom_network:
+    driver: bridge
